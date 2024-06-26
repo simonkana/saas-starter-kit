@@ -2,7 +2,6 @@ import bcrypt from "bcryptjs";
 import { type NextAuthConfig } from "next-auth";
 
 import Google from "next-auth/providers/google"
-import Twitter from "next-auth/providers/twitter"
 import Credentials from "next-auth/providers/credentials";
 
 import { LoginSchema } from "@/schemas";
@@ -13,10 +12,6 @@ export default {
         Google({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        }),
-        Twitter({
-            clientId: process.env.TWITTER_CLIENT_ID,
-            clientSecret: process.env.TWITTER_CLIENT_SECRET,
         }),
         Credentials({
             async authorize(credentials) {

@@ -1,0 +1,14 @@
+import { Navbar } from "@/components/layout/navbar";
+
+export default function ProtectedLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="h-full flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-500 to-teal-900">
+      <Navbar />
+      {children}
+    </div>
+  );
+}
