@@ -13,9 +13,9 @@ export const Navbar = async () => {
   const session = await auth();
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-950/90">
-      <div className="w-full max-w-7xl mx-auto px-4">
-        <div className="flex justify-between h-14 items-center">
+    <nav className="fixed inset-x-0 top-0 z-50">
+      <div className="w-full max-w-7xl mx-auto px-4 py-2">
+        <div className="flex justify-between h-14 items-center text-gray-200">
           <Link href="/" className={cn("flex items-center", font.className)}>
             🚀 SaaS Starter Kit
             <span className="sr-only">SaaS Starter Kit</span>
@@ -23,28 +23,28 @@ export const Navbar = async () => {
           <nav className="hidden md:flex gap-4">
             <Link
               href="#"
-              className="font-medium flex items-center text-sm transition-colors hover:underline"
+              className="font-medium flex items-center transition-colors hover:underline"
               prefetch={false}
             >
               Home
             </Link>
             <Link
               href="#"
-              className="font-medium flex items-center text-sm transition-colors hover:underline"
+              className="font-medium flex items-center transition-colors hover:underline"
               prefetch={false}
             >
               About
             </Link>
             <Link
               href="#"
-              className="font-medium flex items-center text-sm transition-colors hover:underline"
+              className="font-medium flex items-center transition-colors hover:underline"
               prefetch={false}
             >
               Services
             </Link>
             <Link
               href="#"
-              className="font-medium flex items-center text-sm transition-colors hover:underline"
+              className="font-medium flex items-center transition-colors hover:underline"
               prefetch={false}
             >
               Contact
@@ -62,19 +62,17 @@ export const Navbar = async () => {
                   });
                 }}
               >
-                <Button type="submit" size="sm">
-                  Sign out
-                </Button>
+                <Button type="submit">Sign out</Button>
               </form>
             ) : (
-              <>
-                <Button variant="ghost" size="sm" asChild>
+              <div className="flex gap-2 items-center">
+                <Button variant="ghost" asChild>
                   <Link href="/auth/register">Register</Link>
                 </Button>
-                <Button size="sm" asChild>
+                <Button asChild>
                   <Link href="/auth/login">Login</Link>
                 </Button>
-              </>
+              </div>
             )}
           </div>
         </div>
